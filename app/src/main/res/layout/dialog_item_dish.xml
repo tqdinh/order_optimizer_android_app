@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+
+        android:padding="10dp"
+
+        android:id="@+id/rl_left"
+        app:layout_constraintWidth_percent="0.2"
+        app:layout_constraintTop_toTopOf="@+id/ll_item_mid"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="@id/ll_item_mid"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/cardview_light_background"
+            app:strokeWidth="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:innerRadius="0dp"
+            android:shape="ring"
+            app:cardCornerRadius="75dp">
+
+            <ImageView
+                android:scaleType="fitCenter"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:src="@drawable/drink"
+                android:layout_centerHorizontal="true">
+            </ImageView>
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+    <LinearLayout
+
+        android:id="@+id/ll_item_mid"
+        android:orientation="vertical"
+        app:layout_constraintRight_toLeftOf="@+id/iv_edit_right"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/rl_left"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:hint="Nuoc ep"
+            android:id="@+id/et_item_dish_eating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ice cream "
+            android:textSize="18dp"
+            android:textStyle="bold" />
+        <EditText
+            android:hint="DinhIT"
+            android:id="@+id/et_item_owner_name"
+            android:text="Thanh"
+            android:textSize="13dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        app:layout_constraintBottom_toBottomOf="@+id/ll_item_mid"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/iv_edit_right"
+        >
+        <EditText
+            android:inputType="numberDecimal"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:id="@+id/et_item_dish_price"
+            android:hint="40,000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
